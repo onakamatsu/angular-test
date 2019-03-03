@@ -1,0 +1,60 @@
+<div   *ngIf="user">
+  <form action="" #f="ngForm" autocomplete="off" >
+      <div class="field" [class.is-invalid]="name.invalid && name.touched">
+          <label class="label">{{name.invalid && name.touched ? 'Ingrese nombre válido' : 'Nombre:'}}</label>
+          <div class="control">
+              <input  class="input" type="text" placeholder="nombre" 
+              name="name"
+              #name="ngModel"
+              minlength="3"
+              maxlength="20"
+              required
+              [(ngModel)]="user.name" >
+          </div>
+      </div>
+
+      <div class="field" [class.is-invalid]="email.invalid && email.touched">
+        <label class="label">{{email.invalid && email.touched ? 'Ingrese email válido' : 'Email:'}}</label>
+        <div class="control">
+            <input  class="input" type="email" placeholder="email" 
+            name="email"
+            #name="ngModel"
+            required
+            [(ngModel)]="user.email" >
+        </div>
+      </div>
+
+      <div class="field" [class.is-invalid]="role.invalid && role.touched">
+        <label class="label">{{role.invalid && role.touched ? 'Ingrese role válido' : 'Rol:'}}</label>
+        <div class="control">
+            <input  class="input" type="text" placeholder="Rol" 
+            name="role"
+            #name="ngModel"
+            required
+            [(ngModel)]="user.role" >
+        </div>
+      </div>
+     
+      <div class="field" [class.is-invalid]="years.invalid && years.touched">
+          <label class="label">{{years.invalid && years.touched ? 'Ingrese edad válida' : 'Precio:'}}</label>
+          <div class="control">
+              <input  class="input" type="number" placeholder="edad" 
+              name="years"
+              #years="ngModel"
+              required
+              [(ngModel)]="user.years" >
+          </div>
+      </div>
+
+      <div class="field">
+      <p class="control">
+          <button class="button is-success"
+              type="submit"
+              [disabled]="f.invalid" 
+              (click) ="onSubmit(f)" >
+          Guardar
+          </button>
+      </p>
+      </div>
+  </form>
+</div>

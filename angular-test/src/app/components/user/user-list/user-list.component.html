@@ -1,0 +1,20 @@
+<div class="container" >
+  <table class="table is-bordered is-hoverable" >
+      <thead>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Rol</th>
+          <th>Edad</th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let user of users" >
+              <td>{{user.id}}</td>
+              <td>{{user.name}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.role}}</td>
+              <td>{{user.years  }}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
