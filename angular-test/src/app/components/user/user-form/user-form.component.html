@@ -1,15 +1,18 @@
-<div   *ngIf="user">
+<div class="user-form container"  *ngIf="user">
   <form action="" #f="ngForm" autocomplete="off" >
       <div class="field" [class.is-invalid]="name.invalid && name.touched">
           <label class="label">{{name.invalid && name.touched ? 'Ingrese nombre válido' : 'Nombre:'}}</label>
           <div class="control">
-              <input  class="input" type="text" placeholder="nombre" 
-              name="name"
-              #name="ngModel"
-              minlength="3"
-              maxlength="20"
-              required
-              [(ngModel)]="user.name" >
+              <input  
+                class="input" 
+                type="text"
+                [(ngModel)]="user.name"
+                placeholder="nombre" 
+                name="name"
+                #name="ngModel"
+                minlength="3"
+                maxlength="20"
+                required  />
           </div>
       </div>
 
@@ -18,7 +21,7 @@
         <div class="control">
             <input  class="input" type="email" placeholder="email" 
             name="email"
-            #name="ngModel"
+            #email="ngModel"
             required
             [(ngModel)]="user.email" >
         </div>
@@ -29,7 +32,7 @@
         <div class="control">
             <input  class="input" type="text" placeholder="Rol" 
             name="role"
-            #name="ngModel"
+            #role="ngModel"
             required
             [(ngModel)]="user.role" >
         </div>
@@ -38,7 +41,10 @@
       <div class="field" [class.is-invalid]="years.invalid && years.touched">
           <label class="label">{{years.invalid && years.touched ? 'Ingrese edad válida' : 'Precio:'}}</label>
           <div class="control">
-              <input  class="input" type="number" placeholder="edad" 
+              <input  
+              class="input" 
+              type="number" 
+              placeholder="edad" 
               name="years"
               #years="ngModel"
               required

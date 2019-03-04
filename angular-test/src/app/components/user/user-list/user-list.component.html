@@ -1,20 +1,28 @@
 <div class="container" >
-  <table class="table is-bordered is-hoverable" >
-      <thead>
-          <th>Código</th>
-          <th>Nombre</th>
-          <th>Email</th>
-          <th>Rol</th>
-          <th>Edad</th>
-      </thead>
-      <tbody>
-          <tr *ngFor="let user of users" >
-              <td>{{user.id}}</td>
-              <td>{{user.name}}</td>
-              <td>{{user.email}}</td>
-              <td>{{user.role}}</td>
-              <td>{{user.years  }}</td>
-          </tr>
-      </tbody>
-  </table>
+    <table class="table is-bordered is-hoverable" >
+        <thead>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Rol</th>
+            <th>Edad</th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users" >
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.role}}</td>
+                <td>{{user.years}}</td>
+                <td>
+                    <fa class="button is-link" name="edit" size="lg" (click)="handlerUpdate(user.id)" ></fa>
+                </td>
+                <td>
+                    <fa class="button is-danger" name="trash" size="lg" (click)="handlerDelete(user)" ></fa>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

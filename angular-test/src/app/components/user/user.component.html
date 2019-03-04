@@ -1,6 +1,12 @@
 <app-user-list [users]="users" 
                (deleteUser)="deleteUser($event)">
 </app-user-list>
-<p class="button is-primary">
-    <a routerLink='/new-user'>Nuevo Usuario</a>
+<app-confirm-modal
+        [isActive]="isActive"
+        [question]="question"
+        (response)="onResponse($event)"
+    ></app-confirm-modal>
+
+<p style="margin: 20px;padding: 20px;" >
+    <a class="button is-primary" routerLink='/new-user'>Nuevo Usuario</a>
 </p>

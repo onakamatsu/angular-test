@@ -22,7 +22,7 @@ export class UserEditComponent implements OnInit {
         })
     }
 
-    handleSubmit(user: User) {
+    handlerSubmit(user: User) {
         this.userService.updateUser(user.id, user)
              .subscribe(response => {
                  this.router.navigate(['/users']);

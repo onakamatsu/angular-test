@@ -13,17 +13,27 @@ export class UserCreateComponent implements OnInit {
      
     }
 
-    newUser :User=new User();
+    newUser : User=new User();
 
-    constructor(private router: Router,
-                private userService: UserService) {}
+    constructor(private router: Router, private userService: UserService) {}
 
-    handleSubmit(user: User) {
-        
+    handlerSubmit(user: User) {
+        user.id = generate_id(5);
         this.userService.createUser(user)
              .subscribe(response => {
                  this.router.navigate(['/users']);
              });
     }
+}
 
+function generate_id(string_length:number){
+    let random_string:string = '';
+    let random_ascii:number;
+    let ascii_low:number = 65;
+    let ascii_high:number = 90
+    for(let i = 0; i < string_length; i++) {
+        random_ascii = Math.floor((Math.random() * (ascii_high - ascii_low)) + ascii_low);
+        random_string += String.fromCharCode(random_ascii)
+    }
+    return random_string
 }

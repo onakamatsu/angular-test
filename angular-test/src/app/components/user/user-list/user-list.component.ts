@@ -26,6 +26,7 @@ export class UserListComponent implements OnInit {
   }
 
   handlerUpdate(id: string){
+      console.log("navegar a edit->",id);
       this.router.navigate(['users', id]);
   }
 
