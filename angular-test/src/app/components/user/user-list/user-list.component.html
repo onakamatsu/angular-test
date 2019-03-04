@@ -1,13 +1,13 @@
 <div class="container" >
-    <table class="table is-bordered is-hoverable" >
+    <table class="table is-bordered is-hoverable" matSort (matSortChange)="sortData($event)" >
         <thead>
-            <th>Código</th>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Rol</th>
-            <th>Edad</th>
+            <th mat-sort-header="id">Código</th>
+            <th mat-sort-header="name">Nombre</th>
+            <th mat-sort-header="email">Email</th>
+            <th mat-sort-header="role">Rol</th>
+            <th mat-sort-header="years">Edad</th>
             <th></th>
-            <th></th>
+            <th ></th>
         </thead>
         <tbody>
             <tr *ngFor="let user of users" >
@@ -25,4 +25,5 @@
             </tr>
         </tbody>
     </table>
+   
 </div>

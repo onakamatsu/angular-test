@@ -4,6 +4,10 @@ import { FormsModule } from '@angular/forms'
 import { RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
+  MatSortModule, MatTableModule } from '@angular/material';
+import 'hammerjs';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { UserFormComponent } from './components/user/user-form/user-form.component';
@@ -26,7 +30,8 @@ import { ConfirmModalComponent } from './components/modals/confirm-modal/confirm
     ConfirmModalComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, FormsModule,RouterModule.forRoot(routes),AngularFontAwesomeModule
+    BrowserModule, HttpClientModule, FormsModule,RouterModule.forRoot(routes),AngularFontAwesomeModule,MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
+    MatSortModule, MatTableModule,BrowserAnimationsModule
     
   ],
   providers: [UserService],

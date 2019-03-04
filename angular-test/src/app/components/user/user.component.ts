@@ -2,7 +2,6 @@ import { OnInit, Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from 'src/app/models/user.model';
 
-
 @Component({
     selector:'app-user',
     templateUrl:'./user.component.html'
@@ -35,7 +34,6 @@ export class UserComponent implements OnInit{
         this.isActive = true;
         this.userToDelete = user;
     }
-
     onResponse(confirmation: boolean) {
 
         if (confirmation) {
@@ -49,5 +47,4 @@ export class UserComponent implements OnInit{
             this.isActive = false;
         }
     }
-
 }

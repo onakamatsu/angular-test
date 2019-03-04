@@ -18,7 +18,7 @@ export class UserCreateComponent implements OnInit {
     constructor(private router: Router, private userService: UserService) {}
 
     handlerSubmit(user: User) {
-        user.id = generate_id(5);
+        user.id = generate_id(10);
         this.userService.createUser(user)
              .subscribe(response => {
                  this.router.navigate(['/users']);
